@@ -126,11 +126,11 @@ header nav {
     max-width: 1000px;
     margin: 3rem auto;
     opacity: 1;
-    transition: 0.5s;
+    transition: opacity 0.5s;
 }
 
 #main-content #product-image.changing {
-    opacity: 0.5s;
+    opacity: 0.2;
 }
 
 #image-picker {
