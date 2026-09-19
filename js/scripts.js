@@ -2,6 +2,14 @@ const buttons = document.querySelectorAll("#image-picker li");
 const image = document.querySelector("#product-image");
 
 buttons.forEach((btn) => {
+    const colorDiv = btn.querySelector(".color");
+
+    const hexColor = btn.dataset.color;
+
+    colorDiv.style.backgroundColor = hexColor;
+})
+
+buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     console.log(e);
 

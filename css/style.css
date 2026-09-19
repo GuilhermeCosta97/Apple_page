@@ -165,26 +165,6 @@ header nav {
     margin-top: 0.6rem;
 }
 
-#green .color {
-    background-color: #394c38;
-}
-
-#silver .color {
-    background-color: #f1f2ed;
-}
-
-#golden .color {
-    background-color: #fae7cf;
-}
-
-#grafite .color {
-    background-color: #54524f;
-}
-
-#blue .color {
-    background-color: #a7c1d9;
-}
-
 .selected {
     outline: 2px solid #43a1ff;
 }
