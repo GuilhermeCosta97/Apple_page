@@ -2,32 +2,29 @@ const buttons = document.querySelectorAll("#image-picker li");
 const image = document.querySelector("#product-image");
 
 buttons.forEach((btn) => {
-    const colorDiv = btn.querySelector(".color");
+  const colorDiv = btn.querySelector(".color");
+  const hexColor = btn.dataset.color;
 
-    const hexColor = btn.dataset.color;
-
+  if (colorDiv && hexColor) {
     colorDiv.style.backgroundColor = hexColor;
-})
+  }
+});
 
 buttons.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    console.log(e);
+  btn.addEventListener("click", () => {
+    if (btn.classList.contains("selected")) return;
 
-    buttons.forEach((btn) =>
-      btn.querySelector(".color").classList.remove("selected")
-    );
+    buttons.forEach((item) => item.classList.remove("selected"));
 
-    const button = e.target;
+    btn.classList.add("selected");
 
-    const id = button.getAttribute("id");
+    const id = btn.dataset.image || btn.getAttribute("id");
 
-    button.querySelector(".color").classList.add("selected");
-
-    image.classList.toggle("changing");
-    image.setAttribute("src", `img/iphone_${id}.jpg`);
+    image.classList.add("changing");
 
     setTimeout(() => {
-      image.classList.toggle("changing");
-    }, 300);
+      image.setAttribute("src", `img/iphone_${id}.jpg`);
+      image.classList.remove("changing");
+    }, 200);
   });
 });

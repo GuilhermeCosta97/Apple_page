@@ -165,8 +165,15 @@ header nav {
     margin-top: 0.6rem;
 }
 
-.selected {
-    outline: 2px solid #43a1ff;
+#image-picker li,
+#image-picker li * {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#image-picker li.selected .color {
+    outline: 2px solid #0071e3;
+    outline-offset: 2px;
 }
 
 /* Mobile */ 
